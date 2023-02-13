@@ -29,7 +29,7 @@ typedef enum states{EMPTY, GROWTH, DEATH} states;
 typedef enum bool{true, false} bool;
 
 
-int main(void){
+int main(void) {
 	int i;
 	int board[ROWS][COLS]={0};
 	initialiseboard(board);
@@ -44,7 +44,7 @@ int main(void){
 }
 
 /* Create an empty board with dimensions 30 by 80 */
-void initialiseboard(int board[ROWS][COLS]){
+void initialiseboard(int board[ROWS][COLS]) {
 	int i, j;
 	for (i= 0; i<ROWS; i++) {
 		for (j=0; j<COLS; j++) {
@@ -54,7 +54,7 @@ void initialiseboard(int board[ROWS][COLS]){
 }
 
 /* Populate board with random growth cells */
-void growth(int board[ROWS][COLS]){
+void growth(int board[ROWS][COLS]) {
 	int i, j;
 	for (i=0; i<ROWS; i++) {
 		for (j=0; j<COLS; j++) {
@@ -68,7 +68,7 @@ void growth(int board[ROWS][COLS]){
 	}
 }
 /* Generates the probability of growth */
-bool growthprob(void){
+bool growthprob(void) {
 	if ((double)rand()/RAND_MAX<DEATH) {
 		return true;
 	}
