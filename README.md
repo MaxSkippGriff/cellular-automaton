@@ -1,1 +1,3 @@
-# Simple-Forest-Fire-Model
+# Cellular Automaton
+
+## A simple cellular automaton 
