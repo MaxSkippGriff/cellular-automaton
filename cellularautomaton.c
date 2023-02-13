@@ -34,10 +34,10 @@ int main(void) {
 	int board[ROWS][COLS]={0};
 	initialiseboard(board);
   srand(time(NULL));
-
+  /* Generate growth on board for 1000 gen cycles */
 	for (i=1; i<=GENERATIONS; i++) {
 		growth(board);
-		/* Suspends execution for intervals */
+		/* Suspends execution for intervals - i.e., slow visuals */
 		usleep(SLOW);
 	}
 	return 0;
