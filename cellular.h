@@ -6,3 +6,5 @@ void initialiseboard(int board[ROWS][COLS]);
 void treegrowth(int board[ROWS][COLS]);
 /* Generates tree growth according to 'GROW' */
 bool growthprob(void);
+/* Prints the forest fire board */
+void display(int board[ROWS][COLS]);
