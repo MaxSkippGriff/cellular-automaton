@@ -1,6 +1,18 @@
 /*
 
-This program utilises a cellular automaton.
+This program utilises some basic rules to generate a
+cool looking cellular automaton.
+
+There are three different states a cell can be in:
+  * Empty
+  * Growth
+  * Death
+
+It is, of course, to change or add to these states.
+
+It is also possible to change the probabilities of
+these states occurring. To make any such change just
+alter the #define death and growth probabilities below.
 
 It's very simple and mainly designed to write
 in C again -- it's been a while!
