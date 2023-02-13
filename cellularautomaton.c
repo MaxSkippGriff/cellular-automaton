@@ -60,7 +60,8 @@ void growth(int board[ROWS][COLS]) {
 	for (i=0; i<ROWS; i++) {
 		for (j=0; j<COLS; j++) {
 			if (board[i][j]==EMPTY) {
-        /* Generate growth in num of cells according to probs */
+        /* Generate growth in num of cells
+            according to probs */
 				if (growthprob()==true) {
 					board[i][j]=GROWTH;
 				}
