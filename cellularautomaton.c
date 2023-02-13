@@ -75,3 +75,16 @@ bool growthprob(void) {
 	}
 	return false;
 }
+
+/* Display growth cells on board as @ signs */
+void display(int board[ROWS][COLS]) {
+	int i, j;
+	for (i=0; i<ROWS; i++) {
+		for (j=0; j<COLS; j++) {
+			if (board[i][j]==GROWTH) {
+				printf("%c ", '@');
+			}
+		}
+	}
+	printf("\n");
+}
