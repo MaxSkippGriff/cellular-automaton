@@ -1,7 +1,7 @@
 # Cellular Automaton
 
 <p align="center">
-    <img width="450" src="../main/images/cellular.png" alt="cellular">
+    <img width="450" src="../main/images/cellular.gif" alt="cellular">
 </p>
 
 
