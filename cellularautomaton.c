@@ -9,6 +9,7 @@ in C again -- it's been a while!
 
 /* Import libraries */
 #include <stdio.h>
+#include <cellular.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
