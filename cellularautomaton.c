@@ -21,3 +21,22 @@
 /* Three main cell states */
 typedef enum states{EMPTY, TREE, FIRE} states;
 typedef enum bool{true, false} bool;
+
+
+int main(void)
+{
+	int i;
+	int board[ROWS][COLS]={0};
+	initialiseboard(board);
+	return 0;
+}
+
+void initialiseboard(int board[ROWS][COLS])
+{
+	int i, j;
+	for (i= 0; i<ROWS; i++) {
+		for (j=0; j<COLS; j++) {
+			board[i][j]=EMPTY;
+		}
+	}
+}
