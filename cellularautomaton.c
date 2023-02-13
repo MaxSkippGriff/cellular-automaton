@@ -1,4 +1,11 @@
-/* This program utilises a cellular automaton */
+/*
+
+This program utilises a cellular automaton.
+
+It's very simple and mainly designed to write
+in C again -- it's been a while!
+
+*/
 
 /* Import libraries */
 #include <stdio.h>
@@ -14,29 +21,56 @@
 #define GENERATIONS 1000
 /* Suspends execution for microsecond intervals */
 #define SLOW 100000
-/* Probabilities of lightning (IGNITE)
-  and growth (GROW) */
-#define IGNITE 0.0004
+/* Probabilities of death (IGNITE) and growth (GROW) */
+#define DEATH 0.0004
 #define GROW 0.004
 /* Three main cell states */
-typedef enum states{EMPTY, TREE, FIRE} states;
+typedef enum states{EMPTY, GROWTH, DEATH} states;
 typedef enum bool{true, false} bool;
 
 
-int main(void)
-{
+int main(void){
 	int i;
 	int board[ROWS][COLS]={0};
 	initialiseboard(board);
+  srand(time(NULL));
+
+	for (i=1; i<=GENERATIONS; i++) {
+		growth(board);
+		/* Suspends execution for intervals */
+		usleep(SLOW);
+	}
 	return 0;
 }
 
-void initialiseboard(int board[ROWS][COLS])
-{
+/* Create an empty board with dimensions 30 by 80 */
+void initialiseboard(int board[ROWS][COLS]){
 	int i, j;
 	for (i= 0; i<ROWS; i++) {
 		for (j=0; j<COLS; j++) {
 			board[i][j]=EMPTY;
 		}
 	}
+}
+
+/* Populate board with random growth cells */
+void growth(int board[ROWS][COLS]){
+	int i, j;
+	for (i=0; i<ROWS; i++) {
+		for (j=0; j<COLS; j++) {
+			if (board[i][j]==EMPTY) {
+        /* Generate growth in num of cells according to probs */
+				if (growthprob()==true) {
+					board[i][j]=GROWTH;
+				}
+			}
+		}
+	}
+}
+/* Generates the probability of growth */
+bool growthprob(void){
+	if ((double)rand()/RAND_MAX<DEATH) {
+		return true;
+	}
+	return false;
 }
